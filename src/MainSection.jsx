@@ -9,9 +9,7 @@ function MainSection() {
     //     setIngredients( prevIngredient => [...prevIngredient, newIngredient])
     // }
 
-    function handleSubmit(event) {
-        event.preventDefault()
-        const formData = new FormData(event.currentTarget)
+    function addIngredient(formData) {
         const newIngredient = formData.get("ingredient")
         setIngredients( prev => [...prev, newIngredient]);
         
@@ -19,7 +17,7 @@ function MainSection() {
 
     return (
         <main>
-            <form onSubmit={handleSubmit} className="add-ingredient-form">
+            <form action={addIngredient} className="add-ingredient-form">
                 <input 
                     type="text" 
                     placeholder='e.g oregano'
