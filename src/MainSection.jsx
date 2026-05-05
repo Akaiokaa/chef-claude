@@ -28,8 +28,7 @@ function MainSection() {
                 />
                 <button>Add ingredient</button>
             </form>
-
-            <section>
+            {ingredients.length > 0 && <section>
                 <h2>Ingredients on hand:</h2>
                 <ul className="ingredients-list" aria-live="polite">{mapped}</ul>
                 <div className="get-recipe-container">
@@ -39,7 +38,8 @@ function MainSection() {
                     </div>
                     <button>Get a recipe</button>
                 </div>
-            </section>
+            </section>}
+            
         </main>
     )
 }
